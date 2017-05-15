@@ -73,7 +73,7 @@ open class DeltaTableViewController: UIViewController, UITableViewDelegate, UITa
     open var sectionReloadAnimation = UITableViewRowAnimation.automatic
     
     /// The type of the tableview
-    open var tableViewType: UITableViewStyle = .plain
+    open var tableViewType: UITableViewStyle = .grouped
 
 
     // MARK: - Init -
