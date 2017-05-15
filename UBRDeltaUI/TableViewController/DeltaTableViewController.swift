@@ -49,7 +49,7 @@ open class DeltaTableViewController: UIViewController, UITableViewDelegate, UITa
     private var estimatedCellHeights = DeltaMatrix<CGFloat>()
     private var learnedCellHeights = DeltaMatrix<CGFloat>()
     private var headerFooterPrototypes = [String:UITableViewHeaderFooterView]()
-    var tableView: UITableView
+    open var tableView: UITableView
     
     
     // Table View API
@@ -79,7 +79,7 @@ open class DeltaTableViewController: UIViewController, UITableViewDelegate, UITa
     // MARK: - Init -
     // MARK: Init
 
-    init() {
+    public init() {
         tableView = UITableView(frame: CGRect.zero, style: tableViewType)
         super.init(nibName: nil, bundle: nil)
     }
