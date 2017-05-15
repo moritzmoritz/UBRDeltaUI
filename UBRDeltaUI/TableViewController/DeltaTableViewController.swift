@@ -49,7 +49,7 @@ open class DeltaTableViewController: UIViewController, UITableViewDelegate, UITa
     private var estimatedCellHeights = DeltaMatrix<CGFloat>()
     private var learnedCellHeights = DeltaMatrix<CGFloat>()
     private var headerFooterPrototypes = [String:UITableViewHeaderFooterView]()
-    open var tableView = UITableView(frame: CGRect.zero, style: .grouped)
+    var tableView: UITableView
     
     
     // Table View API
@@ -72,8 +72,24 @@ open class DeltaTableViewController: UIViewController, UITableViewDelegate, UITa
     /// The type of animation when sections are reloaded (not updated)
     open var sectionReloadAnimation = UITableViewRowAnimation.automatic
     
+    /// The type of the tableview
+    open var tableViewType: UITableViewStyle = .plain
+
+
+    // MARK: - Init -
+    // MARK: Init
+
+    init() {
+        tableView = UITableView(frame: CGRect.zero, style: tableViewType)
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    
+    required public init?(coder aDecoder: NSCoder) {
+        tableView = UITableView(frame: CGRect.zero, style: tableViewType)
+        super.init(coder: aDecoder)
+    }
+
+
     // MARK: - View -
     // MARK: Life-Cycle
     
